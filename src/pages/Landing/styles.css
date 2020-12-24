@@ -1,0 +1,21 @@
+.main-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(44, 43, 53);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.keyframes-test {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: mymove;
+}
+
+@keyframes mymove {
+  from {background-color: red;}
+  to {background-color: blue;}
+}

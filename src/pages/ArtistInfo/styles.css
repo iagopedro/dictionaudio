@@ -1,0 +1,10 @@
+.logo {
+  height: 100px;
+  width: 100px;
+}
+
+.card-container {
+  height: 90%;
+  width: 90%;
+  overflow-y: scroll;
+}
