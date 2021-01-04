@@ -21,10 +21,12 @@ function Landing() {
 
   return (
     <Container className='main-container' fluid>
-      <Jumbotron>
-        <h1>Dictionaudio</h1>
-        <p>A place where you can find any music artist you want.</p>
-        <Form onSubmit={handleSubmit()}>
+      <Jumbotron className='search-box'>
+        <div className='title-box'>
+          <h1>Dictionaudio</h1>
+          <p>A place where you can find any music artist you want.</p>
+        </div>
+        <Form className='search-form' onSubmit={handleSubmit()}>
           <InputGroup>
             <InputGroup.Prepend>
               <InputGroup.Text>Artist</InputGroup.Text>
@@ -40,7 +42,6 @@ function Landing() {
             <Button variant="primary" type='submit'>Search</Button>
           </Link>
         </Form>
-        <div className='keyframes-test'></div>
       </Jumbotron>
     </Container>
   )

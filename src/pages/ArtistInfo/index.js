@@ -17,11 +17,11 @@ function ArtistInfo() {
   const [title, setTitle] = useState('');
   const [genre, setGenre] = useState('');
   const [logo, setLogo] = useState(null);
-  const [bio, setBio] = useState(null);
+  const [bio, setBio] = useState('');
 
   useEffect(() => {
     async function loadInfo() {
-      const response = await api.get('/', {
+      const response = await api.get('/search.php', {
         params: {
           s: `${artist}`
         },
@@ -40,6 +40,7 @@ function ArtistInfo() {
   
   return (
     <Container className='main-container' fluid>
+      <h1>{title}</h1>
       <Card className='card-container'>
         <Card.Body>
           <Card.Img 
@@ -47,14 +48,13 @@ function ArtistInfo() {
             alt='Logo'
             className='logo'
           />
-          <Card.Subtitle>{title}</Card.Subtitle>
           <Card.Text>Genre: {genre}</Card.Text>
           <Card.Text>Bio: {bio}</Card.Text>
         </Card.Body>
-        <Link to='/'>
-          <Button variant='primary'>Back</Button>      
-        </Link>
       </Card>
+      <Link to='/'>
+        <Button variant='primary' className='btn'>Back</Button>      
+      </Link>
     </Container>
   )
 }
