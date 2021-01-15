@@ -5,13 +5,13 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+// import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
 
-import infoIcon from '../../assets/icons/icons8-info.png';
-import albumsIcon from '../../assets/icons/icons8-music-record.png';
-import facebookIcon from '../../assets/icons/icons8-facebook.png';
-import websiteIcon from '../../assets/icons/icons8-website.png';
+// import infoIcon from '../../assets/icons/icons8-info.png';
+// import albumsIcon from '../../assets/icons/icons8-music-record.png';
+// import facebookIcon from '../../assets/icons/icons8-facebook.png';
+// import websiteIcon from '../../assets/icons/icons8-website.png';
 
 import './styles.css';
 
@@ -23,10 +23,10 @@ function ArtistInfo() {
   const artist = localStorage.getItem('artist');
 
   const [title, setTitle] = useState('');
-  const [genre, setGenre] = useState('');
-  const [logo, setLogo] = useState(null);
+  // const [genre, setGenre] = useState('');
+  // const [logo, setLogo] = useState(null);
   const [avatar, setAvatar] = useState(null);
-  const [bio, setBio] = useState('');
+  // const [bio, setBio] = useState('');
   const [website, setWebsite] = useState('');
   const [facebook, setFacebook] = useState('');
 
@@ -39,13 +39,13 @@ function ArtistInfo() {
       })
       
       const info = response.data.artists[0];
-      
+
       console.log(info);
       setTitle(info.strArtist);
-      setGenre(info.strGenre);
-      setLogo(info.strArtistLogo);
+      // setGenre(info.strGenre);
+      // setLogo(info.strArtistLogo);
       setAvatar(info.strArtistThumb);
-      setBio(info.strBiographyEN)
+      // setBio(info.strBiographyEN);
       setWebsite(info.strWebsite);
       setFacebook(info.strFacebook);
     }
