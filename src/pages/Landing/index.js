@@ -21,13 +21,13 @@ function Landing() {
 
   return (
     <Container className='main-container' fluid>
-      <Jumbotron className='search-box'>
+      <Jumbotron className='content'>
         <div className='title-box'>
           <h1>Dictionaudio</h1>
           <p>A place where you can find any music artist you want.</p>
         </div>
         <Form className='search-form' onSubmit={handleSubmit()}>
-          <InputGroup>
+          <InputGroup className='input-box'>
             <InputGroup.Prepend>
               <InputGroup.Text>Artist</InputGroup.Text>
             </InputGroup.Prepend>
@@ -36,10 +36,15 @@ function Landing() {
               aria-describedby="basic-addon1"
               value={artist}
               onChange={e => setArtist(e.target.value)}
+              className='input-content'
             />
           </InputGroup>
-          <Link to='/artistInfo'>
-            <Button variant="primary" type='submit'>Search</Button>
+          <Link to='/artistInfo' className='search-btn-box'>
+            <Button 
+            variant="primary" 
+            type='submit'
+            className='search-btn'
+            >Search</Button>
           </Link>
         </Form>
       </Jumbotron>
