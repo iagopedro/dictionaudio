@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: center;
   margin: 0;
-  background: linear-gradient(to right, rgb(34, 34, 34), rgb(44, 44, 44));
+  background: linear-gradient(to right, rgb(19, 19, 19), rgb(63, 58, 58));
 }
 
 .title-box {
@@ -54,7 +54,7 @@
 
 .search-btn-box .search-btn {
   color: white;
-  background-color: rgb(22, 22, 22);
+  background-color: rgb(12, 12, 12);
   border: 0;
   transition: all 0.2s;
   height: 3rem;
