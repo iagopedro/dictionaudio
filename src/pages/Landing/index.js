@@ -14,6 +14,7 @@ import './styles.css';
 
 function Landing() {
   const [artist, setArtist] = useState('');
+  const [placeholder, setPlaceholder] = useState('Enter your artist name');
 
   function handleSubmit() {
     localStorage.setItem('artist', artist);
@@ -21,22 +22,25 @@ function Landing() {
 
   return (
     <Container className='main-container' fluid>
-      <Jumbotron className='content'>
+      <Jumbotron className='content rounded'>
         <div className='title-box'>
           <h1>Dictionaudio</h1>
           <p>A place where you can find any music artist you want.</p>
         </div>
         <Form className='search-form' onSubmit={handleSubmit()}>
           <InputGroup className='input-box'>
-            <InputGroup.Prepend>
+            {/* <InputGroup.Prepend>
               <InputGroup.Text>Artist</InputGroup.Text>
-            </InputGroup.Prepend>
+            </InputGroup.Prepend> */}
             <FormControl 
               type="text" 
               aria-describedby="basic-addon1"
               value={artist}
               onChange={e => setArtist(e.target.value)}
               className='input-content'
+              placeholder={placeholder}
+              onFocus={() => setPlaceholder('')}
+              onBlur={() => setPlaceholder('Enter your artist name')}
             />
           </InputGroup>
           <Link to='/artistInfo' className='search-btn-box'>
