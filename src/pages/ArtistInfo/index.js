@@ -34,6 +34,8 @@ function ArtistInfo() {
 
   const [albumsCards, setAlbumsCards] = useState([]);
 
+  const [showModal, setShowModal] = useState(false);
+
   useEffect(() => {
     async function loadInfo() {
       const response = await api.get('/search.php', {
@@ -73,6 +75,15 @@ function ArtistInfo() {
       })
 
       setAlbumsCards(mappedAlbums);
+    }
+
+    async function getAlbumDetails() {
+      const response = await api.get('/searchalbum.php', {
+        params: {
+          s: `${artist}`,
+          a: `${title}`,
+        },
+      })
     }
     
     loadInfo();
@@ -156,9 +167,11 @@ function ArtistInfo() {
           albumsCards.map(album => {
             return <AlbumCard 
                     key={album.id}
+                    showModal={showModal}
                     title={album.title}
                     year={album.year}
                     thumb={album.thumb}
+                    onClick={() => setShowModal(true)}
                   />
           })
         }
